@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MyFXBook Widget (Typ 3)</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <img id="fximg" alt="widget"
+       src="https://widget.myfxbook.com/widget/widget.png?accountOid=11710934&type=3"/>
+
+  <script>
+    function refreshImage() {
+      const rand = Math.floor(Math.random() * 100000);
+      document.getElementById("fximg").src =
+        "https://widget.myfxbook.com/widget/widget.png?accountOid=11710934&type=3&rand=" + rand;
+    }
+    refreshImage();             // sofort beim Laden
+    setInterval(refreshImage, 60000); // alle 60 Sekunden
+  </script>
+</body>
+</html>
