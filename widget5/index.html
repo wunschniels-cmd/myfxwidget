@@ -2,17 +2,34 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>MyFXBook Widget (Typ 3)</title>
+  <title>MyFXBook Widget (Typ 4)</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
-<body style="margin:0; padding:0;">
-  <a href="https://www.myfxbook.com/members/Precy/digitrader24-qsmart/11710934">
-    <img id="fximg" alt="widget" src="https://widget.myfxbook.com/widget/widget.png?accountOid=11710934&type=4"/>
-  </a>
+<body>
+  <img id="fximg" alt="widget"
+       src="https://widget.myfxbook.com/widget/widget.png?accountOid=11710934&type=4"/>
 
   <script>
-    const rand = Math.floor(Math.random() * 100000);
-    const img = document.getElementById("fximg");
-    img.src = "https://widget.myfxbook.com/widget/widget.png?accountOid=11710934&type=4&rand=" + rand;
+    function refreshImage() {
+      const rand = Math.floor(Math.random() * 100000);
+      document.getElementById("fximg").src =
+        "https://widget.myfxbook.com/widget/widget.png?accountOid=11710934&type=4&rand=" + rand;
+    }
+    refreshImage();             // sofort beim Laden
+    setInterval(refreshImage, 60000); // alle 60 Sekunden
   </script>
 </body>
 </html>
