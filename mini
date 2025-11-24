@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>MyFXBook Widget Type 3</title>
-<style>
-  body { margin:0; padding:0; background:transparent; display:flex; justify-content:center; }
-  img { max-width:100%; height:auto; display:block; }
-</style>
-</head>
-<body>
-<img id="fximg" alt="widget">
+<a href="https://www.myfxbook.com/members/Precy/digibusiness24-digitrader24-qsmart-quantum/11805451" target="_blank">
+  <img 
+    alt="MyFXBook Widget"
+    id="mfxtype3"
+    style="max-width:100%; height:auto;"
+    src="https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=3&v=1"
+  />
+</a>
+
 <script>
-  const URL_BASE = "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=3";
-  function refresh() {
-    document.getElementById("fximg").src = URL_BASE + "&_=" + Date.now();
-  }
-  refresh();
-  setInterval(refresh, 60000);
+  setInterval(() => {
+    const el = document.getElementById("mfxtype3");
+    el.src = "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=3&v=" + Math.random();
+  }, 60000); // jede Minute neu
 </script>
-</body>
-</html>
