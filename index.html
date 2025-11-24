@@ -2,19 +2,29 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>MyFXBook Widget (Typ 6)</title>
-</head>
-<body style="margin:0; padding:0;">
-  <img id="fximg" alt="widget"
-       src="https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=6"/>
-  <script>
-    function refreshImage() {
-      const rand = Math.floor(Math.random() * 100000);
-      document.getElementById("fximg").src =
-        "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=6&rand=" + rand;
+  <title>MyFXBook Widget (Typ 6 – iframe)</title>
+  <style>
+    html,body {
+      margin:0; padding:0;
+      display:flex; justify-content:center; align-items:center;
+      background:transparent;
+      height:100%;
     }
-    refreshImage(); // direkt beim Laden
-    setInterval(refreshImage, 60000); // jede Minute
-  </script>
+    iframe {
+      border:0;
+      width:330px;
+      height:440px;
+    }
+  </style>
+</head>
+<body>
+
+<iframe
+  src="https://www.myfxbook.com/forex-widget/widget?oid=11805451&type=6"
+  scrolling="no"
+  frameborder="0">
+</iframe>
+
 </body>
 </html>
+
