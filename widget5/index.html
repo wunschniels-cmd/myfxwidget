@@ -2,40 +2,34 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>MyFXBook Widget (Typ 5)</title>
+  <title>MyFXBook Type 5</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background: transparent;
     }
-    a, img {
-      border: 0;
-    }
     img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       display: block;
     }
   </style>
 </head>
 <body>
-  <a href="https://www.myfxbook.com/members/Precy/digibusiness24-digitrader24-qsmart-quantum/11805451" target="_blank" rel="noopener">
-    <img id="fximg" alt="widget"
-         src="https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=5">
-  </a>
+
+  <img id="fximg"
+       src="https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=5">
 
   <script>
     function refreshImage() {
-      const rand = Math.floor(Math.random() * 1000000);
-      const base = "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=5";
-      document.getElementById("fximg").src = base + "&_=" + rand;
+      const rand = Math.floor(Math.random() * 99999999);
+      document.getElementById("fximg").src =
+        "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=5&cb=" + rand;
     }
     refreshImage();
-    setInterval(refreshImage, 60000); // alle 60 Sekunden
+    setInterval(refreshImage, 60000);
   </script>
+
 </body>
 </html>
