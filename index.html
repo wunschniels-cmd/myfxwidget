@@ -1,35 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>MyFXBook Type 6</title>
+  <title>MyFXBook Widget Typ 6</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       background: transparent;
     }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
       display: block;
+      border: 0;
     }
   </style>
 </head>
 <body>
-
-  <img id="fximg"
-       src="https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=6">
-
+  <img id="fximg" alt="MyFXBook Widget Typ 6">
   <script>
+    const BASE_URL = "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=6";
+
     function refreshImage() {
-      const rand = Math.floor(Math.random() * 99999999);
-      document.getElementById("fximg").src =
-        "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=6" + rand;
+      const ts = Date.now();
+      const url = BASE_URL + "&_cb=" + ts;
+      const img = document.getElementById("fximg");
+      img.src = url;
     }
+
     refreshImage();
     setInterval(refreshImage, 60000);
   </script>
-
 </body>
 </html>
