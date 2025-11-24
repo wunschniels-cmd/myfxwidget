@@ -1,41 +1,22 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>MyFXBook Widget Typ 5</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: transparent;
-    }
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      border: 0;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>MyFXBook Widget Type 5</title>
+<style>
+  body { margin:0; padding:0; background:transparent; display:flex; justify-content:center; }
+  img { max-width:100%; height:auto; display:block; }
+</style>
 </head>
 <body>
-  <img id="fximg" alt="MyFXBook Widget Typ 5">
-  <script>
-    const BASE_URL = "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=5";
-
-    function refreshImage() {
-      const ts = Date.now();
-      const url = BASE_URL + "&_cb=" + ts;
-      const img = document.getElementById("fximg");
-      img.src = url;
-    }
-
-    refreshImage();
-    setInterval(refreshImage, 60000);
-  </script>
+<img id="fximg" alt="widget">
+<script>
+  const URL_BASE = "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=5";
+  function refresh() {
+    document.getElementById("fximg").src = URL_BASE + "&_=" + Date.now();
+  }
+  refresh();
+  setInterval(refresh, 60000);
+</script>
 </body>
 </html>
