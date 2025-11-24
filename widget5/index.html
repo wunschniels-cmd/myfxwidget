@@ -4,53 +4,38 @@
   <meta charset="UTF-8">
   <title>MyFXBook Widget (Typ 5)</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       background: transparent;
     }
     a, img {
-      display: block;
+      border: 0;
     }
     img {
       max-width: 100%;
       height: auto;
-      border: 0;
+      display: block;
     }
   </style>
 </head>
 <body>
-
-  <!-- Original-Link von Myfxbook, nur in sauberes HTML gepackt -->
-  <a href="https://www.myfxbook.com/members/Precy/digibusiness24-digitrader24-qsmart-quantum/11805451"
-     target="_blank"
-     rel="noopener noreferrer">
-    <img
-      id="fximg"
-      alt="widget"
-      src="https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=5"
-      referrerpolicy="no-referrer">
+  <a href="https://www.myfxbook.com/members/Precy/digibusiness24-digitrader24-qsmart-quantum/11805451" target="_blank" rel="noopener">
+    <img id="fximg" alt="widget"
+         src="https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=5">
   </a>
 
   <script>
     function refreshImage() {
-      const base =
-        "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=5";
-      const rand = Date.now(); // Cache-Breaker
-      const img  = document.getElementById("fximg");
-      img.src = base + "&_r=" + rand;
+      const rand = Math.floor(Math.random() * 1000000);
+      const base = "https://widget.myfxbook.com/widget/widget.png?accountOid=11805451&type=5";
+      document.getElementById("fximg").src = base + "&_=" + rand;
     }
-
-    // Direkt nach dem Laden einmal refreshen
     refreshImage();
-
-    // Alle 60 Sekunden aktualisieren
-    setInterval(refreshImage, 60000);
+    setInterval(refreshImage, 60000); // alle 60 Sekunden
   </script>
-
 </body>
 </html>
